@@ -1,7 +1,6 @@
 package Ejercicios;
 import java.util.Iterator;
 
-import Ejercicios.ListaVinculadaSimple.MyIterator;
 
 public class ListaVinculadaSimple implements Iterable<Object> {
 	
