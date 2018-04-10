@@ -163,4 +163,10 @@ public class ListaVinculadaSimple implements Iterable<Object> {
 	public void vaciarLista() {
 		this.first = null;
 	}	
+	public void mostrarLista() {
+		MyIterator iterador = this.iterator();
+		while (iterador.hasNext())
+			System.out.println(iterador.next());
+	}
+
 }

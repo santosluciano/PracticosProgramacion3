@@ -13,10 +13,8 @@ public class Principal {
 			lista2.insert((int)(Math.random() * 10) + 1);
 		}
 		ListaVinculadaSimple listaresultante = lista1.getListaIguales(lista2);
-		MyIterator iterador = listaresultante.iterator();
 		System.out.println("Lista resultante de listas desordenadas");
-		while (iterador.hasNext())
-			System.out.println(iterador.next());
+		listaresultante.mostrarLista();
 		lista1.vaciarLista();
 		lista2.vaciarLista();
 		for (int i = 0; i<10 ;i++) {
@@ -25,9 +23,7 @@ public class Principal {
 		}
 		listaresultante = lista1.getListaIgualesOrdenadas(lista2);
 		System.out.println("Lista resultante de listas ordenadas");
-		iterador = listaresultante.iterator();
-		while (iterador.hasNext())
-			System.out.println(iterador.next());
+		listaresultante.mostrarLista();
 	}
 
 }
