@@ -56,12 +56,12 @@ public class ListaVinculadaSimple implements Iterable<Object> {
 			this.insert(o);
 		else {
 			Nodo cursor = first;
-			boolean agregado = false;
-			while (cursor.getNext() != null && !agregado && cursor.getInfo()!=o && cursor.getNext().getInfo() != o) {
+			while (cursor.getNext() != null && cursor.getInfo()!=o && cursor.getNext().getInfo() != o) {
 				if ((int)cursor.getNext().getInfo() > (int)o) {
 					Nodo tmp = new Nodo(o,cursor.getNext());
 					cursor.setNext(tmp);
-					agregado = true;
+					cantidad++;
+					break;
 				}
 				cursor = cursor.getNext();
 			}
@@ -75,15 +75,13 @@ public class ListaVinculadaSimple implements Iterable<Object> {
 		ListaVinculadaSimple listaretorno = new ListaVinculadaSimple();
 		MyIterator iterator1 = this.iterator();
 		int o;
-		boolean encontre;
 		while (iterator1.hasNext()) {
 			o = (int)iterator1.next();
-			encontre = false;
 			MyIterator iterator2 = lista1.iterator();
-			while (iterator2.hasNext()&&!encontre) {
+			while (iterator2.hasNext()) {
 				if ((int)iterator2.next() == o) {
 					listaretorno.insertOrdenado(o);
-					encontre = true;
+					break;
 				}
 			}
 		} 
@@ -95,18 +93,16 @@ public class ListaVinculadaSimple implements Iterable<Object> {
 		ListaVinculadaSimple listaretorno = new ListaVinculadaSimple();
 		MyIterator iterator1 = this.iterator();
 		int o;
-		boolean encontre;
 		while (iterator1.hasNext()) {
 			o = (int)iterator1.next();
-			encontre = false;
 			MyIterator iterator2 = lista1.iterator();
-			while (iterator2.hasNext()&&!encontre) {
+			while (iterator2.hasNext()) {
 				int tmp = (int)iterator2.next();
 				if ( tmp == o) {
 					listaretorno.insertOrdenado(o);
-					encontre = true;
+					break;
 				} else if (tmp > o) {
-					encontre = true;
+					break;
 				}
 			}
 		} 

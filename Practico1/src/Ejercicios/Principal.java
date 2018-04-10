@@ -16,8 +16,8 @@ public class Principal {
 		//Se llama a la funcion getListaIguales para listas desordenadas y se guarda el puntero
 		//a la nueva lista en listaresultante
 		ListaVinculadaSimple listaresultante = lista1.getListaIguales(lista2);
-		System.out.println("Lista resultante de listas desordenadas");
 		//Se muestra la lista resultante con los numeros en comun de manera ordenada
+		System.out.println("Lista resultante de listas desordenadas");
 		listaresultante.mostrarLista();
 		//Se vacian las dos listas creadas anteriormente
 		lista1.vaciarLista();
