@@ -14,9 +14,14 @@ public class Principal {
 		//Se llama a la funcion getListaIguales para listas desordenadas y se guarda el puntero
 		//a la nueva lista en listaresultante
 		ListaVinculadaSimple listaresultante = lista1.getListaIguales(lista2);
+		System.out.println("Lista 1");
+		lista1.mostrarLista();
+		System.out.println("Lista 2");
+		lista2.mostrarLista();
 		//Se muestra la lista resultante con los numeros en comun de manera ordenada
 		System.out.println("Lista resultante de listas desordenadas");
 		listaresultante.mostrarLista();
+		System.out.println("---------------------------------------");
 		//Se vacian las dos listas creadas anteriormente
 		lista1.vaciarLista();
 		lista2.vaciarLista();
@@ -28,6 +33,10 @@ public class Principal {
 		//Se llama a la funcion getListaIgualesOrdenadas para listas ordenadas y se guarda el puntero
 		//a la nueva lista en listaresultante
 		listaresultante = lista1.getListaIgualesOrdenadas(lista2);
+		System.out.println("Lista 1");
+		lista1.mostrarLista();
+		System.out.println("Lista 2");
+		lista2.mostrarLista();
 		System.out.println("Lista resultante de listas ordenadas");
 		//Se muestra la lista resultante con los numeros en comun de manera ordenada
 		listaresultante.mostrarLista();

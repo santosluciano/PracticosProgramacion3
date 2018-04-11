@@ -161,7 +161,7 @@ public class ListaVinculadaSimple implements Iterable<Object> {
 	public void mostrarLista() {
 		MyIterator iterador = this.iterator();
 		while (iterador.hasNext())
-			System.out.println(iterador.next());
-	}
-
+			System.out.print(" - " + iterador.next());
+		System.out.println(" - ");
+	}	
 }
