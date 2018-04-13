@@ -1,4 +1,4 @@
-package Ejercicios;
+package Ejercicio;
 
 public class Pila {
 	private ListaVinculadaSimple datos;

@@ -1,4 +1,4 @@
-package Ejercicios;
+package Ejercicio;
 
 public class NodoDoble extends Nodo{
 	private Nodo prev;
