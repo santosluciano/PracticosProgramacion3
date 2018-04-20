@@ -4,10 +4,24 @@ public class Principal {
 
 	public static void main(String[] args) {
 		Arbol arbolito = new Arbol();
-		arbolito.insert(2);
-		arbolito.insert(8);
-		arbolito.insert(1);
+		System.out.println(arbolito.getRoot());
+		System.out.println(arbolito.getHeight());
+		arbolito.insert(12);
+		arbolito.insert(7);
+		arbolito.insert(5);
 		arbolito.insert(3);
+		arbolito.insert(6);
+		arbolito.insert(4);
+		arbolito.insert(10);
+		arbolito.insert(9);
+		arbolito.insert(11);
+		arbolito.insert(15);
+		arbolito.insert(18);
+		arbolito.insert(20);
+		arbolito.insert(22);
+		arbolito.insert(17);
+		arbolito.insert(14);
+		arbolito.insert(13);
 		if (arbolito.isEmpty())
 			System.out.println("esta vacio");
 		else

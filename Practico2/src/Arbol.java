@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Arbol {
-	
+
 	private NodoArbol root;
 	private int height;
 	
@@ -17,6 +17,11 @@ public class Arbol {
 		this.root = raiz;
 	}
 	
+	//La complejidad del hasElem es O(log n), considerando que el arbol no va a tener forma de lista.
+	//Si el arbol tiene forma de lista va a ser O(n)
+	public boolean hasElem (Integer o) {
+		return this.hasElem(this.root, o);
+	}
 	private boolean hasElem (NodoArbol raiz, Integer o) {
 		if (raiz != null) {
 			if (raiz.getInfo().equals(o)) {
@@ -32,26 +37,28 @@ public class Arbol {
 			return false;
 	}
 	
-	public boolean hasElem (Integer o) {
-		return this.hasElem(this.root, o);
-	}
-	
 	public Integer getRoot(){
-		return this.root.getInfo();
+		if (this.root == null) 
+			return null;
+		else
+			return this.root.getInfo();
 	}
 	
 	public boolean isEmpty() {
 		return (this.root == null);
 	}
-
-	public void insert(Integer o) { 
-		this.insert(this.root,o);
-	}
 	
-	private void insert(NodoArbol raiz, Integer o) {
+	//La complejidad del insert es O(log n), considerando que el arbol no va a tener forma de lista
+	//Si el arbol tiene forma de lista va a ser O(n)
+	public void insert(Integer o) { 
 		if (this.root == null) {
 			this.root = new NodoArbol(o);
-		}else {
+		} else {
+			this.insert(this.root,o);
+		}
+	}	
+	private void insert(NodoArbol raiz, Integer o) {
+		if (!raiz.getInfo().equals(o)) {
 			if (raiz.getInfo().compareTo(o) > 0) {
 				if (raiz.getIzq() == null) {
 					raiz.setIzq(new NodoArbol(o));
@@ -66,7 +73,9 @@ public class Arbol {
 				}
 			}
 		}
+		
 	}
+	
 
 	public int getHeight() {
 		this.height = 0;
@@ -106,9 +115,9 @@ public class Arbol {
 		if (raiz != null) {
 			System.out.println(raiz.getInfo());
 			if (raiz.getIzq() != null)
-				printPosOrder(raiz.getIzq());
+				printPreOrder(raiz.getIzq());
 			if (raiz.getDer() != null)
-				printPosOrder(raiz.getDer());
+				printPreOrder(raiz.getDer());
 		}		
 	}
 	
@@ -118,11 +127,11 @@ public class Arbol {
 	
 	private void printInOrder(NodoArbol raiz) {
 		if (raiz != null) {
-			if (raiz.getIzq() != null)
-				printPosOrder(raiz.getIzq());
-		System.out.println(raiz.getInfo());
-			if (raiz.getDer() != null)
-				printPosOrder(raiz.getDer());
+			if (raiz.getIzq() != null) 
+				printInOrder(raiz.getIzq());
+			System.out.println(raiz.getInfo());
+			if (raiz.getDer() != null) 
+				printInOrder(raiz.getDer());
 		}
 	}
 	
@@ -136,26 +145,6 @@ public class Arbol {
         } else
         	return null;
 	}
-
-	public boolean delete(Integer o) {
-		return this.delete(this.root,o);
-	}
-	
-	private boolean delete(NodoArbol raiz, Integer o) {
-		if (raiz != null) {
-			if (raiz.getInfo().equals(o)) {
-				if 
-			}
-			else if (raiz.getInfo().compareTo(o) > 0) {
-				return hasElem (raiz.getIzq(), o);
-			}
-			else{
-				return hasElem (raiz.getDer(), o);
-			}
-		} else
-			return false;
-	}
-	
 	
 //	public List<Integer> getLongestBranch(){
 //		
