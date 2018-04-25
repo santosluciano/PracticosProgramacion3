@@ -72,10 +72,8 @@ public class Arbol {
 					insert(raiz.getDer(),o);
 				}
 			}
-		}
-		
+		}		
 	}
-	
 
 	public int getHeight() {
 		this.height = 0;
@@ -93,6 +91,7 @@ public class Arbol {
         }
 	}
 
+	
 	public void printPosOrder() {
 		printPosOrder(this.root);
 	}
@@ -106,6 +105,7 @@ public class Arbol {
 			System.out.println(raiz.getInfo());
 		}
 	}
+	
 	
 	public void printPreOrder() {
 		printPreOrder(this.root);
@@ -121,6 +121,7 @@ public class Arbol {
 		}		
 	}
 	
+	
 	public void printInOrder() {
 		printInOrder(this.root);
 	}
@@ -134,6 +135,7 @@ public class Arbol {
 				printInOrder(raiz.getDer());
 		}
 	}
+	
 	
 	public Integer getMaxElem() {
         if (!this.isEmpty()) {
@@ -150,11 +152,13 @@ public class Arbol {
 //		
 //	}
 	
+	
 	public ArrayList<Integer> getFrontera(){
 		ArrayList<Integer> lista = new ArrayList<Integer>();
 		this.getFrontera(this.root,lista);
 		return lista;
 	}
+	
 	
 	private void getFrontera (NodoArbol raiz, ArrayList<Integer> lista) {
 		if (raiz != null) {

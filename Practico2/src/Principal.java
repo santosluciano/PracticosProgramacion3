@@ -4,8 +4,15 @@ public class Principal {
 
 	public static void main(String[] args) {
 		Arbol arbolito = new Arbol();
+		System.out.print("Raiz del arbol: ");
 		System.out.println(arbolito.getRoot());
+		System.out.print("Altura del arbol: ");
 		System.out.println(arbolito.getHeight());
+		if (arbolito.isEmpty())
+			System.out.println("El arbol esta vacio");
+		else
+			System.out.println("El arbol tiene elementos");	
+		System.out.println("Inserto elementos");		
 		arbolito.insert(12);
 		arbolito.insert(7);
 		arbolito.insert(5);
@@ -22,15 +29,28 @@ public class Principal {
 		arbolito.insert(17);
 		arbolito.insert(14);
 		arbolito.insert(13);
-		if (arbolito.isEmpty())
-			System.out.println("esta vacio");
-		else
-			System.out.println("tiene elementos");
+		System.out.println("--------------------------------------");
+		System.out.print("Raiz del arbol: ");
+		System.out.println(arbolito.getRoot());
+		System.out.print("Altura del arbol: ");
 		System.out.println(arbolito.getHeight());
+		if (arbolito.isEmpty())
+			System.out.println("El arbol esta vacio");
+		else
+			System.out.println("El arbol tiene elementos");		
 		if (arbolito.hasElem(1)) {
-			System.out.println("encontre el numero");
+			System.out.println("encontre el numero 1");
+		}else {
+			System.out.println("No encontre numero 1");
+			System.out.println("inserto el numero 1");
+			arbolito.insert(1);
 		}
-		System.out.println("El maximo elemento del arbolito es");
+		if (arbolito.hasElem(1)) {
+			System.out.println("encontre el numero 1");
+		}else {
+			System.out.println("No encontre el numero 1");
+		}
+		System.out.print("El maximo elemento del arbolito es: ");
 		System.out.println(arbolito.getMaxElem());
 		System.out.println("Arbol post order");
 		arbolito.printPosOrder();
@@ -42,8 +62,7 @@ public class Principal {
 		System.out.println("Frontera del arbol");
 		for (Integer elemento:listado) {
 			System.out.println(elemento);
-		}
-		
+		}		
 	}
 
 }
