@@ -49,8 +49,8 @@ public class TableroMagico {
 		if (fila<this.tamañoTablero) {
 			if (this.sumaFilas[fila]+proxValor > this.S 
 					|| this.sumaColumnas[columna]+proxValor > this.S
-					|| this.sumaColumnas[fila]+proxValor+(this.max*this.tamañoTablero-fila) < this.S
-					|| this.sumaColumnas[columna]+proxValor+(this.max*this.tamañoTablero-columna) < this.S) 
+					|| this.sumaColumnas[fila]+(this.max*this.tamañoTablero-fila) < this.S
+					|| this.sumaColumnas[columna]+(this.max*this.tamañoTablero-columna) < this.S) 
 				return true;
 			else {
 				return false;
